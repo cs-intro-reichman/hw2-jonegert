@@ -7,7 +7,7 @@ public class TimeCalc {
         int totalMin = (hours*60) + (minutes) + (minTooAdd);
         int totalHours = totalMin/60;
         int newHours = totalHours%24;
-        int newMin = totalMin%60;
+        int newMin = (totalMin)-(totalHours*60);
         if (newHours<10 && newMin<10){
             System.out.println("0" + newHours + ":0" + newMin);
         }
@@ -16,6 +16,8 @@ public class TimeCalc {
         }
         else if (newMin<10){
         System.out.println(newHours + ":0" + newMin);
-        } 
+        } else{
+            System.out.println(newHours + ":" + newMin);
+        }
     }
 }
